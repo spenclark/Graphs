@@ -14,7 +14,7 @@ class Graph:
         Add a vertex to the graph.
         """
         pass  # TODO
-
+ 
     def add_edge(self, v1, v2):
         """
         Add a directed edge to the graph.
@@ -32,7 +32,23 @@ class Graph:
         Print each vertex in breadth-first order
         beginning from starting_vertex.
         """
-        pass  # TODO
+        q = Queue()
+        q.enqueue(starting_vertex)
+
+        # keep track of visted nodes
+        visted = set()
+        # repeat when queue empty
+
+        while q.size > 0:
+            #dequeue the first vert 
+            v = q.dequeue()
+            # if not visted
+            if v not in visted:
+                visted.add(v)
+                for next_vert in self.get_neighbors(v):
+                    q.enqueue(next_vert)
+
+
 
     def dft(self, starting_vertex):
         """
