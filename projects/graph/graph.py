@@ -78,7 +78,7 @@ class Graph:
                     if i not in visited_ver:
                         v.push(i)
 
-    def dft_recursive(self, start_vert, vistied=None):
+    def dft_recursive(self, starting_vertex, visited_vertices=None):
         """
         Print each vertex in depth-first order
         beginning from starting_vertex.
@@ -86,8 +86,8 @@ class Graph:
         """
         if visited_vertices is None:
             visited_vertices = set()
-        visited_vertices.add(start_vert)
-        neighbors = self.get_neighbors(start_vert)
+        visited_vertices.add(starting_vertex)
+        neighbors = self.get_neighbors(starting_vertex)
         length = len(neighbors)
         while length > 0:
             for neighbor in neighbors:
