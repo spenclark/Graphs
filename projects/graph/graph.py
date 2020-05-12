@@ -192,10 +192,8 @@ class Graph:
         
         visited.add(start_vert)
 
-        #make a copy of the list and add the new vert on
         path = path + [start_vert]
 
-        #base case
         if start_vert == target_value:
             return path
         
